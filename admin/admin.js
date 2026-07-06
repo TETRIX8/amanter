@@ -70,11 +70,11 @@
     });
   }
 
-  // пути вида "assets/..." относительны корню сайта; из папки /admin поднимаемся на уровень выше
+  // пути вида "assets/..." относительны корню сайта; используем абсолютный путь от корня
   function resolveImg(src) {
     if (!src) return '';
-    if (src.indexOf('data:') === 0 || src.indexOf('http') === 0) return src;
-    return '../' + src;
+    if (src.indexOf('data:') === 0 || src.indexOf('http') === 0 || src.indexOf('/') === 0) return src;
+    return '/' + src;
   }
 
   /* ── Список ── */
