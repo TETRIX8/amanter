@@ -341,11 +341,93 @@ h1, h2 { font-family: 'Playfair Display', serif; color: var(--bordeaux); }
 .modal__row { display: flex; gap: 12px; }
 .modal__row .pbtn { flex: 1; padding: 14px; }
 
+/* ── Мобильная адаптация ── */
+
+@media (max-width: 768px) {
+  .panel__tabs {
+    padding: 18px 14px 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .panel__tabs::-webkit-scrollbar { display: none; }
+  .tab { padding: 11px 18px; font-size: .86rem; white-space: nowrap; flex-shrink: 0; }
+}
+
 @media (max-width: 640px) {
-  .panel__head { padding: 16px 18px; }
-  .panel__tabs { padding: 16px 14px 0; }
-  .panel__body { padding: 20px 16px 30px; margin: 0 8px 30px; }
-  .pitem { grid-template-columns: 72px 1fr; }
-  .pitem__img { width: 72px; height: 58px; }
-  .pitem__btns { grid-column: 1 / -1; flex-direction: row; }
+  .login__card { padding: 34px 24px; border-radius: 24px 24px 30px 30px; }
+  .login__logo { width: 68px; height: 68px; }
+  .login__card h1 { font-size: 1.4rem; }
+  /* 16px, чтобы iOS не зумил при фокусе */
+  .login__card input { font-size: 16px; }
+
+  .panel__head {
+    padding: 14px 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .panel__brand { gap: 12px; }
+  .panel__brand img { width: 44px; height: 44px; }
+  .panel__brand h1 { font-size: 1.1rem; }
+  .panel__brand p { font-size: .72rem; }
+
+  .panel__actions { gap: 8px; flex-wrap: nowrap; }
+  .panel__actions .pbtn {
+    flex: 1 1 0;
+    min-width: 0;
+    text-align: center;
+    padding: 11px 6px;
+    font-size: .78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .panel__body {
+    padding: 18px 14px 28px;
+    margin: 0 8px 30px;
+    border-radius: 0 18px 18px 18px;
+  }
+
+  .panel__toolbar { flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+  .panel__toolbar .pbtn--primary { width: 100%; text-align: center; padding: 14px; }
+
+  .pitem {
+    grid-template-columns: 72px 1fr;
+    gap: 12px;
+    padding: 12px 14px;
+  }
+  .pitem__img { width: 72px; height: 58px; border-radius: 10px; }
+  .pitem__info h3 { font-size: .98rem; }
+  .pitem__info p { font-size: .78rem; }
+  .pitem__btns {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 8px;
+  }
+  .pitem__btns .pbtn { flex: 1; text-align: center; padding: 11px 10px; font-size: .82rem; }
+
+  .ggrid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .gcell { border-radius: 14px; }
+  .gcell__del { width: 38px; height: 38px; }
+
+  /* модал как нижняя шторка */
+  .modal { padding: 0; align-items: flex-end; }
+  .modal__card {
+    width: 100%;
+    max-height: 90dvh;
+    border-radius: 24px 24px 0 0;
+    padding: 26px 20px calc(22px + env(safe-area-inset-bottom));
+  }
+  .modal__card h2 { font-size: 1.25rem; margin-bottom: 16px; }
+  /* 16px, чтобы iOS не зумил при фокусе */
+  .modal__card input,
+  .modal__card textarea { font-size: 16px; padding: 13px 14px; }
+  .modal__row { position: sticky; bottom: 0; background: var(--white); padding-top: 8px; }
+  .modal__row .pbtn { padding: 15px; }
+}
+
+@media (max-width: 340px) {
+  .ggrid { grid-template-columns: 1fr; }
 }

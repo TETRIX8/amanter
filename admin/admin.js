@@ -22,8 +22,6 @@
     render();
   }
 
-  if (sessionStorage.getItem(AUTH_KEY) === '1') showPanel();
-
   loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
     if (passwordInput.value === PASSWORD) {
@@ -266,4 +264,7 @@
       render();
     }
   });
+
+  /* ── Автовход (в конце: все переменные уже инициализированы) ── */
+  if (sessionStorage.getItem(AUTH_KEY) === '1') showPanel();
 })();
