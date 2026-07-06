@@ -38,6 +38,8 @@
     "telephone": "+79095110606",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "ул. Столичная, 7",
+      "postalCode": "386102",
       "addressLocality": "Назрань",
       "addressRegion": "Республика Ингушетия",
       "addressCountry": "RU"
@@ -94,8 +96,9 @@
       <a href="#flowers">Цветы</a>
       <a href="#sweets">Сладости</a>
       <a href="#sets">Наборы</a>
-      <a href="#reviews">Отзывы</a>
-      <a href="#contacts">Контакты</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#map">Как найти</a>
+        <a href="#contacts">Контакты</a>
     </nav>
     <a class="nav__cart" href="https://wa.me/79095110606?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%20%D0%B2%20AMANTER" target="_blank" rel="noopener" aria-label="Заказать в WhatsApp">
       <svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>
@@ -120,6 +123,7 @@
       <a href="#sets"><svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>Наборы</a>
       <a href="#reviews"><svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>Отзывы</a>
       <a href="#insta"><svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>Наши работы</a>
+      <a href="#map"><svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>Как найти</a>
       <a href="#contacts"><svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>Контакты</a>
     </nav>
     <a class="drawer__wa" href="https://wa.me/79095110606?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%20%D0%B2%20AMANTER" target="_blank" rel="noopener">
@@ -331,6 +335,37 @@
         </div>
       </div>
     </section>
+
+    <!-- ══════════ MAP ══════════ -->
+    <section class="map section" id="map">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Ждём вас в гости</p>
+          <h2 class="section-title">Где мы <em>находимся</em></h2>
+          <div class="paw-divider" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>
+          </div>
+        </div>
+        <div class="map__wrap reveal">
+          <iframe
+            class="map__frame"
+            src="https://www.google.com/maps?q=43.1978148,44.7571379&hl=ru&z=16&output=embed"
+            title="AMANTER на карте — ул. Столичная, 7, Назрань"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map__info">
+            <h3 class="map__address">ул. Столичная, 7</h3>
+            <p class="map__city">г. Назрань, Республика Ингушетия</p>
+            <p class="map__hours">Ежедневно с 09:00 до 21:00</p>
+            <a class="btn btn--ghost btn--darktext" href="https://maps.app.goo.gl/AwXB3HYPdyscuUMw5" target="_blank" rel="noopener">
+              <svg viewBox="0 0 64 64" class="btn-paw-icon"><use href="#paw-shape"/></svg>
+              Построить маршрут
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ══════════ 9. FOOTER ══════════ -->
@@ -348,7 +383,7 @@
         <h4>Контакты</h4>
         <a href="tel:+79095110606">+7 (909) 511-06-06</a>
         <a href="https://wa.me/79095110606" target="_blank" rel="noopener">WhatsApp: wa.me/79095110606</a>
-        <p>г. Назрань, Республика Ингушетия</p>
+        <p>ул. Столичная, 7, г. Назрань,<br>Республика Ингушетия</p>
       </div>
       <div class="footer__col">
         <h4>Режим работы</h4>

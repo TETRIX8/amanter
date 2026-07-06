@@ -1094,6 +1094,54 @@ img { display: block; max-width: 100%; }
 
 .btn--darktext { color: var(--bordeaux); }
 
+/* ═══════════ 8.5 MAP ═══════════ */
+
+.map__wrap {
+  display: flex;
+  align-items: stretch;
+  gap: 32px;
+}
+
+.map__frame {
+  flex: 1 1 62%;
+  min-height: 420px;
+  border: 0;
+  border-radius: 30px;
+  box-shadow: var(--shadow-soft);
+}
+
+.map__info {
+  flex: 1 1 38%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 40px 36px;
+  background: var(--white, #fff);
+  border-radius: 30px;
+  box-shadow: var(--shadow-soft);
+}
+
+.map__address {
+  font-size: 1.6rem;
+  color: var(--bordeaux);
+}
+
+.map__city,
+.map__hours {
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.map__info .btn { margin-top: 10px; }
+
+@media (max-width: 860px) {
+  .map__wrap { flex-direction: column; }
+  .map__frame { min-height: 320px; width: 100%; }
+  .map__info { width: 100%; padding: 30px 24px; }
+}
+
 /* ═══════════ 9. FOOTER ═══════════ */
 
 .footer {
