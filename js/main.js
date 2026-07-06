@@ -159,7 +159,7 @@
   var instaGrid = document.getElementById('instaGrid');
   Store.loadGallery().forEach(function (ph) {
     instaGrid.appendChild(el(
-      '<a class="insta__item" href="https://instagram.com" target="_blank" rel="noopener">' +
+      '<a class="insta__item" href="https://instagram.com/amanter_ing" target="_blank" rel="noopener">' +
         '<img src="' + escapeHtml(ph.img) + '" alt="' + escapeHtml(ph.alt || 'Работа AMANTER') + '" loading="lazy">' +
         '<span class="insta__hover">♥</span>' +
       '</a>'
