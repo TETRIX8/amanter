@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMANTER — Админ-панель</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- ── Вход ── -->
+  <div class="login" id="loginScreen">
+    <form class="login__card" id="loginForm">
+      <img src="../assets/logo.png" alt="AMANTER" class="login__logo">
+      <h1>Админ-панель</h1>
+      <p>Введите пароль для управления товарами</p>
+      <input type="password" id="passwordInput" placeholder="Пароль" autocomplete="current-password" required>
+      <p class="login__error" id="loginError" hidden>Неверный пароль. Попробуйте ещё раз.</p>
+      <button type="submit">Войти</button>
+      <a class="login__back" href="../index.html">← Вернуться на сайт</a>
+    </form>
+  </div>
+
+  <!-- ── Панель ── -->
+  <div class="panel" id="panel" hidden>
+    <header class="panel__head">
+      <div class="panel__brand">
+        <img src="../assets/logo.png" alt="AMANTER">
+        <div>
+          <h1>AMANTER — товары</h1>
+          <p>Изменения сохраняются в этом браузере и сразу видны на сайте</p>
+        </div>
+      </div>
+      <div class="panel__actions">
+        <a class="pbtn pbtn--ghost" href="../index.html" target="_blank">Открыть сайт</a>
+        <button class="pbtn pbtn--ghost" id="resetBtn" type="button">Сбросить к исходным</button>
+        <button class="pbtn pbtn--ghost" id="logoutBtn" type="button">Выйти</button>
+      </div>
+    </header>
+
+    <nav class="panel__tabs">
+      <button class="tab is-active" data-section="flowers" type="button">🌹 Цветы</button>
+      <button class="tab" data-section="sweets" type="button">🧁 Сладости</button>
+      <button class="tab" data-section="sets" type="button">🎁 Наборы</button>
+      <button class="tab" data-section="gallery" type="button">📷 Галерея</button>
+    </nav>
+
+    <main class="panel__body">
+      <div class="panel__toolbar">
+        <button class="pbtn pbtn--primary" id="addBtn" type="button">+ Добавить товар</button>
+        <span class="panel__saved" id="savedNote" hidden>✓ Сохранено</span>
+      </div>
+      <div class="plist" id="productList"></div>
+      <input type="file" id="galleryFile" accept="image/*" hidden>
+    </main>
+  </div>
+
+  <!-- ── Форма товара (модал) ── -->
+  <div class="modal" id="modal" hidden>
+    <form class="modal__card" id="productForm">
+      <h2 id="modalTitle">Товар</h2>
+      <label>Категория / метка
+        <input type="text" id="fTag" placeholder="Например: Розы" required>
+      </label>
+      <label>Название
+        <input type="text" id="fName" placeholder="«Парижский вечер»" required>
+      </label>
+      <label>Описание
+        <textarea id="fDesc" rows="2" placeholder="51 бордовая роза в шёлковой упаковке" required></textarea>
+      </label>
+      <label>Цена, ₽
+        <input type="number" id="fPrice" min="0" step="50" placeholder="7900" required>
+      </label>
+      <label>Фото
+        <input type="file" id="fImgFile" accept="image/*">
+      </label>
+      <div class="modal__preview">
+        <img id="fImgPreview" src="" alt="Предпросмотр" hidden>
+      </div>
+      <div class="modal__row">
+        <button type="submit" class="pbtn pbtn--primary">Сохранить</button>
+        <button type="button" class="pbtn pbtn--ghost" id="cancelBtn">Отмена</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="../js/products.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMANTER — Премиальные цветы и европейские сладости</title>
+  <meta name="description" content="AMANTER — бутик премиальных цветов и европейских сладостей. Букеты, макаруны, торты и подарочные наборы с доставкой.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body class="no-scroll">
+
+  <!-- SVG-библиотека: отпечаток лапки (декор и курсор) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="paw-shape">
+        <ellipse cx="32" cy="43" rx="15" ry="12"/>
+        <ellipse cx="13" cy="27" rx="6.5" ry="9" transform="rotate(-18 13 27)"/>
+        <ellipse cx="25" cy="17" rx="6.5" ry="9" transform="rotate(-6 25 17)"/>
+        <ellipse cx="39" cy="17" rx="6.5" ry="9" transform="rotate(6 39 17)"/>
+        <ellipse cx="51" cy="27" rx="6.5" ry="9" transform="rotate(18 51 27)"/>
+      </g>
+    </defs>
+  </svg>
+
+  <!-- ══════════ ИНТРО: ВИДЕО СРАЗУ, СО ЗВУКОМ ══════════ -->
+  <div class="intro" id="intro">
+    <video id="introVideo" src="assets/intro.mp4" playsinline autoplay preload="auto"></video>
+    <button class="intro__sound" id="introSound" hidden aria-label="Включить звук">🔊</button>
+    <button class="intro__skip" id="introSkip">Пропустить&nbsp;→</button>
+  </div>
+
+  <!-- ══════════ НАВИГАЦИЯ ══════════ -->
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#hero">
+      <img src="assets/logo.png" alt="Логотип AMANTER" class="nav__logo-img">
+      AMANTER
+    </a>
+    <nav class="nav__links">
+      <a href="#about">О нас</a>
+      <a href="#flowers">Цветы</a>
+      <a href="#sweets">Сладости</a>
+      <a href="#sets">Наборы</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="nav__cart" href="https://wa.me/79095110606?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%20%D0%B2%20AMANTER" target="_blank" rel="noopener" aria-label="Заказать в WhatsApp">
+      <svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>
+      <span>Заказать</span>
+    </a>
+    <button class="nav__burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ══════════ БОКОВОЕ МЕНЮ (мобильное) ══════════ -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__head">
+      <img src="assets/logo.png" alt="AMANTER" class="drawer__logo">
+      <button class="drawer__close" id="drawerClose" aria-label="Закрыть меню">✕</button>
+    </div>
+    <nav class="drawer__links">
+      <a href="#about"><svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>О нас</a>
+      <a href="#flowers"><svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>Цветы</a>
+      <a href="#sweets"><svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>Сладости</a>
+      <a href="#sets"><svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>Наборы</a>
+      <a href="#reviews"><svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>Отзывы</a>
+      <a href="#insta"><svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>Наши работы</a>
+      <a href="#contacts"><svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>Контакты</a>
+    </nav>
+    <a class="drawer__wa" href="https://wa.me/79095110606?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%20%D0%B2%20AMANTER" target="_blank" rel="noopener">
+      Заказать в WhatsApp
+    </a>
+    <p class="drawer__phone">+7 (909) 511-06-06</p>
+  </aside>
+
+  <main>
+    <!-- ══════════ 1. HERO ══════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__petals" id="petals" aria-hidden="true"></div>
+      <div class="hero__content reveal">
+        <div class="hero__logo-wrap">
+          <h1 class="hero__logo">AMANTER</h1>
+          <div class="hero__line"><span></span><svg viewBox="0 0 64 64" class="hero__line-paw"><use href="#paw-shape"/></svg><span></span></div>
+        </div>
+        <p class="hero__slogan">Цветы и сладости, созданные с&nbsp;любовью</p>
+        <div class="hero__buttons">
+          <a href="#flowers" class="btn btn--primary">
+            <svg viewBox="0 0 64 64" class="btn-paw-icon"><use href="#paw-shape"/></svg>
+            Купить цветы
+          </a>
+          <a href="#sweets" class="btn btn--ghost">
+            <svg viewBox="0 0 64 64" class="btn-paw-icon"><use href="#paw-shape"/></svg>
+            Выбрать сладости
+          </a>
+        </div>
+      </div>
+      <a class="hero__scroll" href="#about" aria-label="Прокрутить вниз"><span></span></a>
+    </section>
+
+    <!-- ══════════ 2. О НАС ══════════ -->
+    <section class="about section" id="about">
+      <div class="container about__grid">
+        <div class="about__text reveal">
+          <p class="section-eyebrow">Наша философия</p>
+          <h2 class="section-title">Бутик, где живёт <em>нежность</em></h2>
+          <div class="paw-divider" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>
+            <svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>
+            <svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>
+          </div>
+          <p class="about__lead">«AMANTER — это место, где каждый букет рассказывает историю, а&nbsp;каждая сладость создаёт воспоминание».</p>
+          <p class="about__body">Мы соединили искусство французской флористики и традиции европейских кондитерских. Каждый лепесток, каждый макарун — результат бережной работы наших мастеров. Мягко, как прикосновение кошачьей лапки.</p>
+          <p class="about__signature">С любовью, команда AMANTER</p>
+        </div>
+        <div class="about__photo reveal reveal-delay-1">
+          <div class="about__photo-frame">
+            <img src="assets/about.png" alt="Флорист AMANTER собирает букет" loading="lazy">
+          </div>
+          <svg class="about__photo-paw" viewBox="0 0 64 64" aria-hidden="true"><use href="#paw-shape"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ 3. КАТАЛОГ ЦВЕТОВ ══════════ -->
+    <section class="catalog section" id="flowers">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Свежие поставки каждое утро</p>
+          <h2 class="section-title">Каталог <em>цветов</em></h2>
+          <div class="paw-divider" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>
+          </div>
+        </div>
+        <div class="catalog__grid" id="flowersGrid"></div>
+      </div>
+    </section>
+
+    <!-- ══════════ 4. КАТАЛОГ СЛАДОСТЕЙ ══════════ -->
+    <section class="catalog catalog--sweets section" id="sweets">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Рецепты европейских кондитеров</p>
+          <h2 class="section-title">Европейские <em>сладости</em></h2>
+          <div class="paw-divider" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>
+          </div>
+        </div>
+        <div class="catalog__grid" id="sweetsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ══════════ 5. ПОДАРОЧНЫЕ НАБОРЫ ══════════ -->
+    <section class="sets section" id="sets">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Цветы + сладости</p>
+          <h2 class="section-title">Подарочные <em>наборы</em></h2>
+          <div class="paw-divider" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>
+          </div>
+        </div>
+        <div class="slider reveal" id="slider">
+          <button class="slider__arrow slider__arrow--prev" id="sliderPrev" aria-label="Предыдущий набор">‹</button>
+          <div class="slider__track" id="sliderTrack"></div>
+          <button class="slider__arrow slider__arrow--next" id="sliderNext" aria-label="Следующий набор">›</button>
+        </div>
+        <div class="slider__dots" id="sliderDots"></div>
+      </div>
+    </section>
+
+    <!-- ══════════ 6. КАК МЫ РАБОТАЕМ ══════════ -->
+    <section class="steps section" id="steps">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Просто, как три шага лапки</p>
+          <h2 class="section-title">Как мы <em>работаем</em></h2>
+          <div class="paw-divider" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>
+          </div>
+        </div>
+        <div class="steps__grid">
+          <div class="step reveal">
+            <div class="step__paw">
+              <svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>
+              <span class="step__num">1</span>
+            </div>
+            <h3 class="step__title">Выбираете</h3>
+            <p class="step__text">Букет, десерт или готовый набор — на сайте или с помощью нашего флориста</p>
+          </div>
+          <div class="step reveal reveal-delay-1">
+            <div class="step__paw">
+              <svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>
+              <span class="step__num">2</span>
+            </div>
+            <h3 class="step__title">Мы собираем</h3>
+            <p class="step__text">Флорист и кондитер готовят заказ в день доставки — только свежие цветы и десерты</p>
+          </div>
+          <div class="step reveal reveal-delay-2">
+            <div class="step__paw">
+              <svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>
+              <span class="step__num">3</span>
+            </div>
+            <h3 class="step__title">Доставляем с любовью</h3>
+            <p class="step__text">Бережно привозим в фирменной упаковке точно к назначенному времени</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ 7. ОТЗЫВЫ ══════════ -->
+    <section class="reviews section" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">Более 2 000 счастливых клиентов</p>
+          <h2 class="section-title">Отзывы <em>клиентов</em></h2>
+          <div class="paw-divider" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>
+          </div>
+        </div>
+        <div class="reviews__grid">
+          <article class="review reveal">
+            <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <p class="review__text">«Заказывала набор "Роман в Париже" на годовщину. Муж был в восторге, а макаруны — лучшие, что я пробовала. Упаковка невероятная!»</p>
+            <div class="review__author">
+              <svg viewBox="0 0 64 64" class="review__paw"><use href="#paw-shape"/></svg>
+              <div>
+                <span class="review__name">Анастасия К.</span>
+                <span class="review__date">12 июня 2026</span>
+              </div>
+            </div>
+          </article>
+          <article class="review reveal reveal-delay-1">
+            <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <p class="review__text">«Пионы стояли больше десяти дней! Видно, что цветы действительно свежие. Курьер приехал минута в минуту. Теперь заказываю только здесь».</p>
+            <div class="review__author">
+              <svg viewBox="0 0 64 64" class="review__paw"><use href="#paw-shape"/></svg>
+              <div>
+                <span class="review__name">Мария Д.</span>
+                <span class="review__date">28 мая 2026</span>
+              </div>
+            </div>
+          </article>
+          <article class="review reveal reveal-delay-2">
+            <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <p class="review__text">«Торт "Розовый бархат" — произведение искусства. Гости не верили, что его можно есть. AMANTER — это уровень парижского бутика».</p>
+            <div class="review__author">
+              <svg viewBox="0 0 64 64" class="review__paw"><use href="#paw-shape"/></svg>
+              <div>
+                <span class="review__name">Елена В.</span>
+                <span class="review__date">3 июля 2026</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ 8. INSTAGRAM ══════════ -->
+    <section class="insta section" id="insta">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow">@amanter.boutique</p>
+          <h2 class="section-title">Наши <em>работы</em></h2>
+          <div class="paw-divider" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><use href="#paw-shape"/></svg>
+          </div>
+        </div>
+        <div class="insta__grid reveal" id="instaGrid"></div>
+        <div class="insta__cta reveal">
+          <a class="btn btn--ghost btn--darktext" href="https://instagram.com" target="_blank" rel="noopener">
+            <svg viewBox="0 0 64 64" class="btn-paw-icon"><use href="#paw-shape"/></svg>
+            Смотреть в Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════ 9. FOOTER ══════════ -->
+  <footer class="footer" id="contacts">
+    <div class="footer__paws" aria-hidden="true"></div>
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo-wrap">
+          <img src="assets/logo.png" alt="Логотип AMANTER" class="footer__logo-img">
+          <span class="footer__logo">AMANTER</span>
+        </div>
+        <p class="footer__slogan">Цветы и сладости,<br>созданные с любовью</p>
+      </div>
+      <div class="footer__col">
+        <h4>Контакты</h4>
+        <a href="tel:+79095110606">+7 (909) 511-06-06</a>
+        <a href="mailto:hello@amanter.ru">hello@amanter.ru</a>
+        <p>г. Москва, ул. Цветочная, 7</p>
+      </div>
+      <div class="footer__col">
+        <h4>Режим работы</h4>
+        <p>Пн–Пт: 9:00 – 21:00</p>
+        <p>Сб–Вс: 10:00 – 20:00</p>
+        <p>Доставка — ежедневно</p>
+      </div>
+      <div class="footer__col">
+        <h4>Мы в соцсетях</h4>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://t.me" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://wa.me/79095110606" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 AMANTER. Все права защищены. <a class="footer__admin" href="admin/index.html">Для персонала</a></p>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
