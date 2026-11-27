@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="/assets/logo.png">
-  <link rel="stylesheet" href="/admin/admin.css">
+  <link rel="stylesheet" href="/admin/admin.css?v=2">
 </head>
 <body>
 
@@ -18,9 +18,9 @@
     <form class="login__card" id="loginForm">
       <img src="/assets/logo.png" alt="AMANTER" class="login__logo">
       <h1>Админ-панель</h1>
-      <p>Введите пароль для управления товарами</p>
+      <p>Введите пароль администратора для доступа к панели</p>
       <input type="password" id="passwordInput" placeholder="Пароль" autocomplete="current-password" required>
-      <p class="login__error" id="loginError" hidden>Неверный пароль. Попробуйте ещё раз.</p>
+      <p class="login__error" id="loginError" hidden aria-live="polite">Неверный пароль. Попробуйте ещё раз.</p>
       <button type="submit">Войти</button>
       <a class="login__back" href="/">← Вернуться на сайт</a>
     </form>
@@ -48,6 +48,7 @@
       <button class="tab" data-section="sweets" type="button">🧁 Сладости</button>
       <button class="tab" data-section="sets" type="button">🎁 Наборы</button>
       <button class="tab" data-section="gallery" type="button">📷 Галерея</button>
+      <button class="tab" data-section="stats" type="button">Статистика</button>
     </nav>
 
     <main class="panel__body">
@@ -56,6 +57,48 @@
         <span class="panel__saved" id="savedNote" hidden>✓ Сохранено</span>
       </div>
       <div class="plist" id="productList"></div>
+      <section class="stats" id="statsView" hidden aria-labelledby="statsTitle">
+        <div class="stats__head">
+          <div>
+            <h2 id="statsTitle">Статистика сайта</h2>
+            <p id="statsStatus" aria-live="polite">Выберите период и обновите данные.</p>
+          </div>
+          <div class="stats__controls">
+            <label for="statsRange">Период</label>
+            <select id="statsRange">
+              <option value="1">24 часа</option>
+              <option value="7" selected>7 дней</option>
+              <option value="30">30 дней</option>
+              <option value="90">90 дней</option>
+            </select>
+            <button class="pbtn pbtn--primary" id="statsRefresh" type="button">Обновить</button>
+            <button class="pbtn pbtn--ghost" id="statsExport" type="button">Скачать CSV</button>
+          </div>
+        </div>
+        <div class="stats__kpis" id="statsKpis"></div>
+        <div class="stats__columns">
+          <section class="stats__card stats__card--wide">
+            <h3>Посещения и действия по дням выбранного периода</h3>
+            <div class="stats__timeline" id="statsTimeline"></div>
+          </section>
+          <section class="stats__card"><h3>Популярные страницы</h3><div id="statsPages"></div></section>
+          <section class="stats__card"><h3>Переходы и клики</h3><div id="statsActions"></div></section>
+          <section class="stats__card"><h3>Куда переходят</h3><div id="statsDestinations"></div></section>
+          <section class="stats__card"><h3>Источники сеансов</h3><div id="statsSources"></div></section>
+          <section class="stats__card"><h3>Устройства</h3><div id="statsDevices"></div></section>
+          <section class="stats__card"><h3>Открытые разделы</h3><div id="statsSections"></div></section>
+          <section class="stats__card stats__card--wide">
+            <h3>Последние события</h3>
+            <div class="stats__table-wrap">
+              <table class="stats__table">
+                <thead><tr><th>Время</th><th>Событие</th><th>Элемент</th><th>Страница</th></tr></thead>
+                <tbody id="statsRecent"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+        <p class="stats__footnote" id="statsFootnote">События аналитики не содержат IP-адресов и рекламных идентификаторов; временные HMAC-ключи используются только для ограничения запросов. Хранение — до 90 дней и не более 20&nbsp;000 последних событий.</p>
+      </section>
       <input type="file" id="galleryFile" accept="image/*" hidden>
     </main>
   </div>
@@ -90,6 +133,6 @@
   </div>
 
   <script src="/js/products.js"></script>
-  <script src="/admin/admin.js"></script>
+  <script src="/admin/admin.js?v=2"></script>
 </body>
 </html>
